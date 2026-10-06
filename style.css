@@ -1,0 +1,310 @@
+/* ===== RESET & VARIABEL WARNA ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg: #eef2ff;
+    --card: #ffffff;
+    --text: #1e1b3a;
+    --muted: #5f5b80;
+    --indigo: #4f46e5;
+    --violet: #7c3aed;
+    --teal: #0d9488;
+    --amber: #f59e0b;
+    --pink: #ec4899;
+    --border: #dcd9f5;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background: linear-gradient(180deg, #eef2ff 0%, #f5f0ff 50%, #e8faf7 100%);
+    background-attachment: fixed;
+}
+
+/* ===== HEADER ===== */
+header {
+    background: linear-gradient(120deg, var(--indigo), var(--violet) 55%, var(--pink));
+    color: #fff;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+header h1 {
+    font-size: 2.4rem;
+    margin-bottom: 6px;
+}
+
+header p {
+    opacity: 0.92;
+}
+
+/* ===== NAVIGASI ===== */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 10px;
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 3px solid var(--amber);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav a {
+    color: var(--indigo);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: 20px;
+}
+
+nav a:hover,
+nav a:focus {
+    background: var(--indigo);
+    color: #fff;
+    outline: none;
+}
+
+hr {
+    display: none;
+}
+
+/* ===== MAIN: CSS GRID ===== */
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 16px;
+}
+
+section {
+    --accent: var(--indigo);
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-top: 6px solid var(--accent);
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 6px 18px rgba(79, 70, 229, 0.10);
+    scroll-margin-top: 70px;
+}
+
+/* warna aksen berbeda untuk tiap section */
+section:nth-of-type(1) { --accent: var(--indigo); }
+section:nth-of-type(2) { --accent: var(--teal); }
+section:nth-of-type(3) { --accent: var(--amber); }
+section:nth-of-type(4) { --accent: var(--pink); }
+
+section h2 {
+    color: var(--accent);
+    margin-bottom: 12px;
+}
+
+br {
+    display: none;
+}
+
+/* ===== PROFILE: FLEXBOX + POSITIONING ===== */
+.profile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background: linear-gradient(135deg, #ffffff 60%, #ede9fe);
+}
+
+.badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: linear-gradient(120deg, var(--amber), var(--pink));
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 20px;
+}
+
+.profile-photo {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--violet);
+    box-shadow: 0 0 0 5px #ddd6fe;
+}
+
+.profile-info {
+    text-align: center;
+}
+
+.profile-info h2 {
+    font-size: 1.7rem;
+    color: var(--violet);
+}
+
+.profile-info p {
+    margin-bottom: 10px;
+}
+
+.profile-info strong {
+    color: var(--indigo);
+}
+
+/* ===== HOBBIES: berbentuk label warna-warni ===== */
+ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+li {
+    background: #ccfbf1;
+    color: #0f766e;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: 20px;
+}
+
+li:nth-child(2) { background: #ede9fe; color: #5b21b6; }
+li:nth-child(3) { background: #fef3c7; color: #b45309; }
+li:nth-child(4) { background: #fce7f3; color: #be185d; }
+
+/* ===== TABEL ===== */
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 400px;
+}
+
+th, td {
+    border: 1px solid var(--border);
+    padding: 10px 12px;
+    text-align: left;
+}
+
+th {
+    background: linear-gradient(120deg, var(--amber), #f97316);
+    color: #fff;
+}
+
+tr:nth-child(even) td {
+    background: #fffbeb;
+}
+
+/* ===== FORM ===== */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--muted);
+}
+
+input,
+textarea {
+    padding: 10px 12px;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    font: inherit;
+    width: 100%;
+    background: #fdfcff;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--pink);
+    box-shadow: 0 0 0 3px #05e3af;
+}
+
+button {
+    background: linear-gradient(120deg, var(--pink), var(--violet));
+    color: #fff;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 24px;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+button:hover {
+    filter: brightness(1.1);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 22px;
+    background: linear-gradient(120deg, #312e81, #5b21b6);
+    color: #fff;
+    margin-top: 30px;
+}
+
+/* ===== RESPONSIF: TABLET (>= 768px) ===== */
+@media (min-width: 768px) {
+    .content-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .profile,
+    #academic {
+        grid-column: 1 / -1;
+    }
+
+    .profile {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 30px;
+    }
+
+    .profile-photo {
+        width: 220px;
+        height: 220px;
+        flex-shrink: 0;
+    }
+
+    .profile-info {
+        text-align: left;
+    }
+}
+
+/* ===== RESPONSIF: LAYAR KECIL (<= 480px) ===== */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    section {
+        padding: 18px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
